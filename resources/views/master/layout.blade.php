@@ -51,6 +51,110 @@
     .logout-btn:hover {
         color: #dc3545;
     }
+
+    .cart-wrapper {
+        position: relative;
+    }
+
+    .cart-preview {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 300px;
+        background: white;
+        border-radius: 8px;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        display: none;
+        z-index: 1000;
+    }
+
+    .cart-wrapper:hover .cart-preview {
+        display: block;
+    }
+
+    .cart-preview-header {
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cart-preview-header h6 {
+        margin: 0;
+        color: #0a192f;
+        font-weight: 600;
+    }
+
+    .cart-preview-items {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+
+    .cart-preview-item {
+        display: flex;
+        align-items: center;
+        padding: 10px 15px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .cart-preview-item img {
+        width: 50px;
+        height: 50px;
+        object-fit: cover;
+        border-radius: 4px;
+        margin-right: 10px;
+    }
+
+    .item-details {
+        flex-grow: 1;
+    }
+
+    .item-name {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #0a192f;
+    }
+
+    .item-price {
+        margin: 0;
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+
+    .cart-preview-footer {
+        padding: 10px 15px;
+        text-align: center;
+    }
+
+    .view-cart-btn {
+        display: inline-block;
+        background: #0a192f;
+        color: white;
+        padding: 5px 15px;
+        border-radius: 4px;
+        text-decoration: none;
+        font-size: 0.9rem;
+    }
+
+    .view-cart-btn:hover {
+        background: #152a4e;
+        color: white;
+    }
+
+    .empty-cart {
+        padding: 15px;
+        text-align: center;
+        color: #6c757d;
+        margin: 0;
+    }
+
+    .navmenu ul {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .navmenu ul li {
+        position: relative;
+    }
   </style>
 </head>
 
@@ -68,10 +172,10 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero" class="active">Home</a></li>
-          <li><a href="/menu">Menu</a></li>
-          <li><a href="#events">Restaurant</a></li>
-          <li><a href="/contact">Contact</a></li>
+          <li><a href="/" class="{{ Request::is('/') ? 'active' : '' }}">Home</a></li>
+          <li><a href="/menu" class="{{ Request::is('menu') ? 'active' : '' }}">Menu</a></li>
+          <li><a href="#events" class="{{ Request::is('events') ? 'active' : '' }}">Restaurant</a></li>
+          <li><a href="/contact" class="{{ Request::is('contact') ? 'active' : '' }}">Contact</a></li>
 
           @guest
               <li><a href="{{ route('login') }}">Login</a></li>
@@ -90,7 +194,7 @@
               </li>
           @endguest
 
-          <li class="nav-item">
+          <li class="nav-item cart-wrapper">
               <a href="{{ route('cart.index') }}" class="nav-link position-relative">
                   <i class="bi bi-cart3 fs-5"></i>
                   @if(Session::has('cart') && count(Session::get('cart')) > 0)
@@ -99,6 +203,30 @@
                       </span>
                   @endif
               </a>
+              <!-- Cart Preview -->
+              <div class="cart-preview">
+                  <div class="cart-preview-header">
+                      <h6>Cart Items</h6>
+                  </div>
+                  <div class="cart-preview-items">
+                      @if(Session::has('cart') && count(Session::get('cart')) > 0)
+                          @foreach(Session::get('cart') as $item)
+                              <div class="cart-preview-item">
+                                  <img src="{{ $item['image'] }}" alt="{{ $item['name'] }}">
+                                  <div class="item-details">
+                                      <p class="item-name">{{ $item['name'] }}</p>
+                                      <p class="item-price">RM {{ number_format($item['price'], 2) }} x {{ $item['quantity'] }}</p>
+                                  </div>
+                              </div>
+                          @endforeach
+                          <div class="cart-preview-footer">
+                              <a href="{{ route('cart.index') }}" class="view-cart-btn">View Cart</a>
+                          </div>
+                      @else
+                          <p class="empty-cart">Your cart is empty</p>
+                      @endif
+                  </div>
+              </div>
           </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -196,6 +324,26 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- Add this JavaScript for smooth hover behavior -->
+  <script>
+      document.addEventListener('DOMContentLoaded', function() {
+          let timeout;
+          const cartWrapper = document.querySelector('.cart-wrapper');
+          const cartPreview = document.querySelector('.cart-preview');
+
+          cartWrapper.addEventListener('mouseenter', function() {
+              clearTimeout(timeout);
+              cartPreview.style.display = 'block';
+          });
+
+          cartWrapper.addEventListener('mouseleave', function() {
+              timeout = setTimeout(() => {
+                  cartPreview.style.display = 'none';
+              }, 200);
+          });
+      });
+  </script>
 
 </body>
 
