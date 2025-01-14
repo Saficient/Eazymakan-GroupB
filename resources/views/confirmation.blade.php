@@ -34,7 +34,7 @@
             <div class="col-md-6">
                 <img src="assets/img/bankqr.jpg" class="img-fluid animated" alt="">
                 <h4>
-                    UIA FOOD <br>
+                    EazyMakan <br>
                     Maybank <br>
                     16260000555
                 </h4><br>

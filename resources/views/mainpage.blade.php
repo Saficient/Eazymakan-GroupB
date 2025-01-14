@@ -1,12 +1,10 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>UIA FOOD SERVICE</title>
+  <title>EazyMakan</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -36,6 +34,65 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+
+  <style>
+    .hero {
+        position: relative;
+        padding: 80px 0;
+        background-color: transparent;
+        overflow: hidden;
+    }
+
+    .hero-img {
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hero-image {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+        /* Remove any background color or shadow that might affect transparency */
+        background: transparent;
+    }
+
+    /* Animation for the floating effect */
+    .animated {
+        animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+        0% {
+            transform: translateY(0px);
+        }
+        50% {
+            transform: translateY(-20px);
+        }
+        100% {
+            transform: translateY(0px);
+        }
+    }
+
+    /* Ensure text remains crisp */
+    .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        color: #0a192f;
+        margin-bottom: 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+        color: #6c757d;
+        margin-bottom: 30px;
+        position: relative;
+        z-index: 2;
+    }
+  </style>
 </head>
 
 <body class="index-page">
@@ -50,16 +107,16 @@
 
         <div class="container">
           <div class="row gy-4 justify-content-center justify-content-lg-between">
-            <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center">
+            <div class="col-lg-6 order-2 order-lg-1 d-flex flex-column justify-content-center">
               <h1 data-aos="fade-up">Enjoy Your <br>Delicious Food</h1>
               <p data-aos="fade-up" data-aos-delay="100">We are team of talented designers making websites with Laravel</p>
               <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
 
-                <a href="https://www.youtube.com/watch?v=ZWqNbeMFF8g&ab_channel=IIUMTa%27arufWeekOfficial" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
+                <a href="https://www.youtube.com/watch?v=ZWqNbeMFF8g" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>
               </div>
             </div>
             <div class="col-lg-5 order-1 order-lg-2 hero-img" data-aos="zoom-out">
-              <img src="assets/img/hero-img.png" class="img-fluid animated" alt="">
+              <img src="{{ asset('assets/img/hero-dish.png') }}" class="hero-image animated" alt="Hero Food">
             </div>
           </div>
         </div>
@@ -122,9 +179,10 @@
 
           <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="why-box">
-              <h3>Why Choose Us</h3>
+              <h3>Why Choose EazyMakan</h3>
               <p>
-                Choose UIAfood for a seamless and convenient dining experience at IIUM. We provide comprehensive information on campus eateries, exclusive promotions, and easy access to international restaurants, ensuring diverse and affordable food options at your fingertips. Enjoy efficiency, variety, and quality—all in one place.
+                Choose EazyMakan for a seamless and convenient dining experience at IIUM. We provide comprehensive information on campus eateries, exclusive promotions, and easy access to international restaurants, ensuring diverse and affordable food options at your fingertips. Enjoy efficiency, variety, and quality—all in one place.
+              </p>
               <div class="text-center">
                 <a href="#" class="more-btn"><span>Learn More</span> <i class="bi bi-chevron-right"></i></a>
               </div>

@@ -1,363 +1,135 @@
-@extends('master.layout')
-@section('content')
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EazyMakan - Menu</title>
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: 'Inter', sans-serif;
+        }
 
-  <!-- Menu Section -->
-  <section id="menu" class="menu section">
+        .menu-header {
+            background-color: #0a192f;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 40px;
+        }
 
-    <!-- Section Title -->
-    <div class="container section-title" data-aos="fade-up">
-      <h2>Our Menu</h2>
-      <p><span>Check Our</span> <span class="description-title">Yummy Menu</span></p>
-    </div><!-- End Section Title -->
+        .menu-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
 
-    <div class="container">
+        .menu-subtitle {
+            font-size: 1.2rem;
+            color: #ccc;
+        }
 
-      <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+        .mahallah-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 0 50px;
+            margin-bottom: 50px;
+        }
 
-        <li class="nav-item">
-          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#menu-starters">
-            <h4>Starters</h4>
-          </a>
-        </li><!-- End tab nav item -->
+        .back-btn {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
 
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-breakfast">
-            <h4>Breakfast</h4>
-          </a><!-- End tab nav item -->
+        .back-btn:hover {
+            color: #ccc;
+        }
 
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-lunch">
-            <h4>Lunch</h4>
-          </a>
-        </li><!-- End tab nav item -->
+        .mahallah-card {
+            display: block;
+            text-decoration: none;
+            background-color: #e9ecef;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
 
-        <li class="nav-item">
-          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#menu-dinner">
-            <h4>Dinner</h4>
-          </a>
-        </li><!-- End tab nav item -->
+        .mahallah-card:hover {
+            transform: translateY(-5px);
+            text-decoration: none;
+        }
 
-      </ul>
+        .mahallah-logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 15px;
+            border-radius: 50%;
+        }
 
-      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
-
-        <div class="tab-pane fade active show" id="menu-starters">
-
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Starters</h3>
-          </div>
-
-          <div class="row gy-5">
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/Nasilemak.jpg" class="glightbox"><img src="assets/img/menu/Nasilemak.jpg" class="menu-img img-fluid" alt=""></a>
-              <h4>Nasi Lemak Ayam Goreng</h4>
-              <p class="ingredients">
-                Rice, sardine, peanuts, egg, Fried Chicken and a spicy sauce
-              </p>
-              <p class="price">
-                RM 6
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Chicken Mix</h4>
-              <p class="ingredients">
-                Chicken, egg, potato and sauce
-              </p>
-              <p class="price">
-                RM 5
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Shawarma</h4>
-              <p class="ingredients">
-                Pita Bread, chicken, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 7
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Shawarma</h4>
-              <p class="ingredients">
-                Pita Bread, Beef, Fries, Garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 8
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Shawarma Large</h4>
-              <p class="ingredients">
-                Pita Bread, chicken, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 10
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Shawarma Large</h4>
-              <p class="ingredients">
-                Pita Bread, Beef, Fries, Garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 11
-              </p>
-            </div><!-- Menu Item -->
-
-          </div>
-        </div><!-- End Starter Menu Content -->
-
-        <div class="tab-pane fade" id="menu-breakfast">
-
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Breakfast</h3>
-          </div>
-
-          <div class="row gy-5">
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Nasi Lemak Ayam Goreng</h4>
-              <p class="ingredients">
-                Rice, sardine, peanuts, egg, Fried Chicken and a spicy sauce
-              </p>
-              <p class="price">
-                RM 6
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Chicken Mix</h4>
-              <p class="ingredients">
-                Chicken, egg, potato and sauce
-              </p>
-              <p class="price">
-                RM 5
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Shawarma</h4>
-              <p class="ingredients">
-                Pita Bread, chicken, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 6
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Shawarma</h4>
-              <p class="ingredients">
-                Pita Bread, Beef, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 8
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Shawarma Large</h4>
-              <p class="ingredients">
-                Pita Bread, chicken, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 10
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Shawarma Large</h4>
-              <p class="ingredients">
-                Pita Bread, Beef, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 11
-              </p>
-            </div><!-- Menu Item -->
-
-          </div>
-        </div><!-- End Breakfast Menu Content -->
-
-        <div class="tab-pane fade" id="menu-lunch">
-
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Lunch</h3>
-          </div>
-
-          <div class="row gy-5">
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Nasi Lemak Ayam Goreng</h4>
-              <p class="ingredients">
-                Rice, sardine, peanuts, egg, Fried Chicken and a spicy sauce
-              </p>
-              <p class="price">
-                RM 6
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Chicken Mix</h4>
-              <p class="ingredients">
-                Chicken, egg, potato and sauce
-              </p>
-              <p class="price">
-                RM 5
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Shawarma</h4>
-              <p class="ingredients">
-                Pita Bread, chicken, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 7
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Shawarma</h4>
-              <p class="ingredients">
-                Pita Bread, Beef, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 8
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Shawarma Large</h4>
-              <p class="ingredients">
-                Pita Bread, chicken, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 10
-              </p>
-            </div><!-- Menu Item -->
-
-            <div class="col-lg-4 menu-item">
-              <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-              <h4>Beef Shawarma Large</h4>
-              <p class="ingredients">
-                Pita Bread, Beef, fries, garlic sauce and salad
-              </p>
-              <p class="price">
-                RM 8
-              </p>
-            </div><!-- Menu Item -->
-
-          </div>
-        </div><!-- End Lunch Menu Content -->
-
-        <div class="tab-pane fade" id="menu-dinner">
-
-          <div class="tab-header text-center">
-            <p>Menu</p>
-            <h3>Dinner</h3>
-          </div>
-
-          <div class="row gy-5">
-
-            <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-1.png" class="glightbox"><img src="assets/img/menu/menu-item-1.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Nasi Lemak Ayam Goreng</h4>
-                <p class="ingredients">
-                  Rice, sardine, peanuts, egg, Fried Chicken and a spicy sauce
-                </p>
-                <p class="price">
-                  RM 6
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-2.png" class="glightbox"><img src="assets/img/menu/menu-item-2.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Chicken Mix</h4>
-                <p class="ingredients">
-                  Chicken, egg, potato and sauce
-                </p>
-                <p class="price">
-                  RM 5
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-3.png" class="glightbox"><img src="assets/img/menu/menu-item-3.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Shawarma</h4>
-                <p class="ingredients">
-                  Pita Bread, chicken, fries, garlic sauce and salad
-                </p>
-                <p class="price">
-                  RM 7
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-4.png" class="glightbox"><img src="assets/img/menu/menu-item-4.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Beef Shawarma</h4>
-                <p class="ingredients">
-                  Pita Bread, Beef, fries, garlic sauce and salad
-                </p>
-                <p class="price">
-                  RM 8
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-5.png" class="glightbox"><img src="assets/img/menu/menu-item-5.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Shawarma Large</h4>
-                <p class="ingredients">
-                  Pita Bread, chicken, fries, garlic sauce and salad
-                </p>
-                <p class="price">
-                  RM 10
-                </p>
-              </div><!-- Menu Item -->
-
-              <div class="col-lg-4 menu-item">
-                <a href="assets/img/menu/menu-item-6.png" class="glightbox"><img src="assets/img/menu/menu-item-6.png" class="menu-img img-fluid" alt=""></a>
-                <h4>Beef Shawarma Large</h4>
-                <p class="ingredients">
-                  Pita Bread, Beef, fries, garlic sauce and salad
-                </p>
-                <p class="price">
-                  RM 8
-                </p>
-              </div><!-- Menu Item -->
-
-          </div>
-        </div><!-- End Dinner Menu Content -->
-
-      </div>
-
+        .mahallah-name {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="menu-header text-center">
+        <a href="/" class="back-btn">
+            <i class="bi bi-arrow-left"></i> Back to Home
+        </a>
+        <h1 class="menu-title">MENU</h1>
+        <p class="menu-subtitle">Please choose which Mahallah cafeteria's food that you would like to order</p>
     </div>
 
-  </section><!-- /Menu Section -->
+    <div class="container">
+        <div class="mahallah-grid">
+            <!-- Mahallah Aminah -->
+            <a href="{{ route('mahallah.menu', 'aminah') }}" class="mahallah-card">
+                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Aminah" class="mahallah-logo">
+                <h3 class="mahallah-name">Mahallah Aminah</h3>
+            </a>
 
-  @endsection
+            <!-- Mahallah Hafsa -->
+            <a href="{{ route('mahallah.menu', 'hafsa') }}" class="mahallah-card">
+                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Hafsa" class="mahallah-logo">
+                <h3 class="mahallah-name">Mahallah Hafsa</h3>
+            </a>
+
+            <!-- Mahallah Nusaibah -->
+            <a href="{{ route('mahallah.menu', 'nusaibah') }}" class="mahallah-card">
+                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Nusaibah" class="mahallah-logo">
+                <h3 class="mahallah-name">Mahallah Nusaibah</h3>
+            </a>
+
+            <!-- Mahallah Salahuddin -->
+            <a href="{{ route('mahallah.menu', 'salahuddin') }}" class="mahallah-card">
+                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Salahuddin" class="mahallah-logo">
+                <h3 class="mahallah-name">Mahallah Salahuddin</h3>
+            </a>
+
+            <!-- Mahallah Zubair -->
+            <a href="{{ route('mahallah.menu', 'zubair') }}" class="mahallah-card">
+                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Zubair" class="mahallah-logo">
+                <h3 class="mahallah-name">Mahallah Zubair</h3>
+            </a>
+
+            <!-- Mahallah Ali -->
+            <a href="{{ route('mahallah.menu', 'ali') }}" class="mahallah-card">
+                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Ali" class="mahallah-logo">
+                <h3 class="mahallah-name">Mahallah Ali</h3>
+            </a>
+        </div>
+    </div>
+
+    <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+</body>
+</html>

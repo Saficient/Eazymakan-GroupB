@@ -9,6 +9,7 @@ use App\Http\Controllers\Auth\RegisteredUserController; // Add this line
 use App\Http\Controllers\Auth\AuthenticatedSessionController; // Add this line
 use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\CartController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,7 +28,7 @@ Route::get('/', function () {
 
 Route::get('/menu', function () {
     return view('menu');
-});
+})->name('menu');
 Route::get('/addfeedback', function () {
     return view('addfeedback');
 });
@@ -97,3 +98,15 @@ Route::post('/logout', function () {
     Auth::logout();
     return redirect('/');
 })->name('logout');
+
+Route::get('/menu/{mahallah}', function ($mahallah) {
+    return view('mahallah-menu', [
+        'mahallah' => 'Mahallah ' . ucfirst($mahallah)
+    ]);
+})->name('mahallah.menu');
+
+// Cart Routes
+Route::get('/cart', [CartController::class, 'index'])->name('cart.index');
+Route::post('/cart/add', [CartController::class, 'add'])->name('cart.add');
+Route::delete('/cart/{index}', [CartController::class, 'remove'])->name('cart.remove');
+Route::get('/checkout', [CartController::class, 'checkout'])->name('checkout');

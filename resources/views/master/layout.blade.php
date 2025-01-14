@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>UIA FOOD SERVICE</title>
+  <title>EazyMakan</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -62,7 +62,7 @@
       <a href="/" class="logo d-flex align-items-center me-auto me-xl-0">
         <!-- Uncomment the line below if you also wish to use an image logo -->
         <!-- <img src="assets/img/logo.png" alt=""> -->
-        <h1 class="sitename">UIAFOOD</h1>
+        <h1 class="sitename">EazyMakan</h1>
         <span>.</span>
       </a>
 
@@ -89,6 +89,17 @@
                   </form>
               </li>
           @endguest
+
+          <li class="nav-item">
+              <a href="{{ route('cart.index') }}" class="nav-link position-relative">
+                  <i class="bi bi-cart3 fs-5"></i>
+                  @if(Session::has('cart') && count(Session::get('cart')) > 0)
+                      <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                          {{ count(Session::get('cart')) }}
+                      </span>
+                  @endif
+              </a>
+          </li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
