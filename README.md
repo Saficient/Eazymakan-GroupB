@@ -1,4 +1,4 @@
-# INFO 3305 Web Application Development Group Project Proposal
+# INFO 3305 Web Application Development Group Project 
 
 Group: __B__
  
