@@ -74,13 +74,13 @@ The proposed web application will utilize Laravel, a robust PHP framework, to cr
 ![mahallahOrderSeq drawio-2](https://github.com/user-attachments/assets/1a0c5f88-1c53-4744-9c58-81461c1c21e9)
 
 ### Project System Screenshot
-1. Sign up Page
+1. Sign up Page<br />
 Name: A text input field for the user's full name.
 Email: A text input for the user's email address.
 Password and Confirm Password: Two fields to ensure the user enters their password correctly. The page features a minimalist design with a "Register" button and a link for users who are already registered.
 ![photo_2025-01-16_01-15-37](https://github.com/user-attachments/assets/56870d42-32e5-4d98-8d8f-1a42e06c19ed)
 
-3. Login Page
+3. Login Page<br />
 Login form on the right, offering:
 Google and Facebook login options.
 Traditional login with email and password fields.
@@ -104,7 +104,7 @@ A "Sign Up" link for users without an account. The design effectively combines v
 
 9. Transaction Page
 
-10. User Profile Page
+10. User Profile Page<br />
 Basic Details: Name, email, and user ID.
 Additional Fields: Phone number, address, and password input fields.
 An Edit button allows users to update their information. Navigation options for Menu, Cart, Order Updates, and Logout are present in the header, emphasizing user accessibility.
