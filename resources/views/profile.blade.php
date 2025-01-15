@@ -3,191 +3,118 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EazyMakan - Profile</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <title>Profile - EazyMakan</title>
+    <link href="{{ asset('assets/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
     <style>
         body {
-            margin: 0;
-            padding: 0;
+            background-color: #f8f9fa;
             font-family: 'Inter', sans-serif;
-            background-color: #f5f5f5;
-        }
-
-        .navbar {
-            background-color: #0a192f;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            color: white;
-        }
-
-        .logo {
-            color: #64ffda;
-            font-size: 1.5rem;
-            text-decoration: none;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            align-items: center;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
         }
 
         .profile-container {
-            max-width: 1000px;
-            margin: 2rem auto;
-            padding: 2rem;
+            max-width: 800px;
+            margin: 40px auto;
             background: white;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
         }
 
         .profile-header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            margin-bottom: 2rem;
-        }
-
-        .profile-info {
-            display: flex;
             align-items: center;
-            gap: 1.5rem;
+            margin-bottom: 30px;
         }
 
-        .profile-image {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            object-fit: cover;
-        }
-
-        .profile-text h2 {
-            margin: 0;
-            color: #333;
-        }
-
-        .profile-text p {
-            margin: 0.5rem 0 0;
-            color: #666;
-        }
-
-        .edit-button {
-            padding: 0.5rem 2rem;
-            background: #4285f4;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-        }
-
-        .profile-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+        .profile-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #0a192f;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: #666;
+        .form-label {
             font-weight: 500;
+            color: #0a192f;
         }
 
-        .form-group input {
-            width: 100%;
-            padding: 0.75rem;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            font-size: 1rem;
+        .form-control {
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+            padding: 10px 15px;
         }
 
-        .form-group input:focus {
-            outline: none;
-            border-color: #4285f4;
+        .form-control:focus {
+            border-color: #0a192f;
+            box-shadow: 0 0 0 0.2rem rgba(10, 25, 47, 0.25);
         }
 
-        .logout-button {
-            background: #dc3545;
+        .save-btn {
+            background-color: #0a192f;
             color: white;
             border: none;
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            cursor: pointer;
+            padding: 10px 30px;
+            border-radius: 5px;
             font-weight: 500;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s ease;
         }
 
-        .logout-button:hover {
-            background: #c82333;
+        .save-btn:hover {
+            background-color: #152a4e;
+        }
+
+        .alert {
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <nav class="navbar">
-        <a href="/" class="logo">EazyMakan</a>
-        <div class="nav-links">
-            <a href="/menu">Menu</a>
-            <a href="/cart">Cart</a>
-            <a href="/order-updates">Order Updates</a>
-            <a href="/profile" style="text-decoration: underline;">Profile</a>
-            <form method="POST" action="{{ route('logout') }}" style="display: inline;">
-                @csrf
-                <button type="submit" class="logout-button">Logout</button>
-            </form>
-        </div>
-    </nav>
+    @extends('master.layout')
+    @section('content')
 
     <div class="profile-container">
-        <div class="profile-header">
-            <div class="profile-info">
-                <img src="{{ asset('assets/img/profile-default.png') }}" alt="Profile" class="profile-image">
-                <div class="profile-text">
-                    <h2>{{ Auth::user()->name }}</h2>
-                    <p>{{ Auth::user()->email }}</p>
-                </div>
+        @if (session('status'))
+            <div class="alert alert-success">
+                {{ session('status') }}
             </div>
-            <button class="edit-button">Edit</button>
+        @endif
+
+        <div class="profile-header">
+            <h2 class="profile-title">Profile</h2>
         </div>
 
-        <div class="profile-form">
-            <div class="form-group">
-                <label>User ID</label>
-                <input type="text" placeholder="Type Your Username" value="{{ Auth::user()->id }}" readonly>
+        <form action="{{ route('profile.update') }}" method="POST">
+            @csrf
+            @method('PATCH')
+
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" name="username" class="form-control" value="{{ auth()->user()->name }}">
             </div>
-            <div class="form-group">
-                <label>Email</label>
-                <input type="email" placeholder="Type Your Email" value="{{ Auth::user()->email }}">
+
+            <div class="mb-3">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" value="{{ auth()->user()->email }}">
             </div>
-            <div class="form-group">
-                <label>Username</label>
-                <input type="text" placeholder="Type Your Username" value="{{ Auth::user()->name }}">
+
+            <div class="mb-3">
+                <label for="phone" class="form-label">Phone</label>
+                <input type="text" name="phone" class="form-control" value="{{ auth()->user()->phone }}">
             </div>
-            <div class="form-group">
-                <label>Phone No</label>
-                <input type="tel" placeholder="Type Your Phone No">
+
+            <div class="mb-3">
+                <label for="address" class="form-label">Address</label>
+                <input type="text" name="address" class="form-control" value="{{ auth()->user()->address }}">
             </div>
-            <div class="form-group">
-                <label>Password</label>
-                <input type="password" placeholder="Type Your Password">
-            </div>
-            <div class="form-group">
-                <label>Address</label>
-                <input type="text" placeholder="Type Your Address">
-            </div>
-        </div>
+
+            <button type="submit" class="btn btn-primary">Save Changes</button>
+        </form>
     </div>
+
+    @endsection
 </body>
 </html>

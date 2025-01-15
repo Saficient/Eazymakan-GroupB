@@ -127,7 +127,7 @@
                 <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Ali" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Ali</h3>
             </a>
-        </div>
+      </div>
     </div>
 
     <script src="{{ asset('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
