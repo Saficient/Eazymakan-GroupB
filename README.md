@@ -73,34 +73,7 @@ The proposed web application will utilize Laravel, a robust PHP framework, to cr
 ### Sequence Diagram
 ![mahallahOrderSeq drawio-2](https://github.com/user-attachments/assets/1a0c5f88-1c53-4744-9c58-81461c1c21e9)
 
-### Mockup Pictures
-
-1. Login Mockup
-   ![login](https://github.com/user-attachments/assets/11521a00-38c9-4f59-8f98-fd0800d4b98e)
-
-2. Menu Page Mockup i
-   ![menu 1](https://github.com/user-attachments/assets/35f5d3f4-ae2c-4b14-800f-54ccec784860)
-
-3. Menu Page Mockup ii
-   ![menu 2](https://github.com/user-attachments/assets/6de9a15f-1df9-416a-bbb8-ee57b879621f)
-
-4. Menu Page Mockup iii
-   ![menu 3](https://github.com/user-attachments/assets/abe4f4c2-c3ad-43f1-99bc-67c9ec286ab5)
-
-5. Cart Page Mockup
-   ![CART PAGE-02](https://github.com/user-attachments/assets/44da5419-70c1-4d16-b336-0ce61e71d549)
-
-6. Transaction Page Mockup 
-   ![TRANSACTION PAGE1](https://github.com/user-attachments/assets/51452b17-71d4-4fee-9fdf-eee8040eb96b)
-
-7. Transaction Page Mockup 
-   ![TRANSACTION PAGE2](https://github.com/user-attachments/assets/9ab91b9d-9a7c-4395-88ca-0743c86089d9)
-
-8. Order Details Page Mockup
-   ![Order Detalls Page](https://github.com/user-attachments/assets/91d2eba9-04a8-4854-82dc-1c554ad2f437)
-
-10. User Profile Page
-   ![user profile](https://github.com/user-attachments/assets/a503cc3e-fb24-4f2d-a3be-f9abfab2e019)
+### Project System Screenshot
 
 
 ### References
