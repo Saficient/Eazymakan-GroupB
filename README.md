@@ -74,6 +74,17 @@ The proposed web application will utilize Laravel, a robust PHP framework, to cr
 ![mahallahOrderSeq drawio-2](https://github.com/user-attachments/assets/1a0c5f88-1c53-4744-9c58-81461c1c21e9)
 
 ### Project System Screenshot
+1. 
+
+
+### Challenges faced while developing the web application
+
+1. Synchronising with each teammate to get the same output on each device.
+2. For the login functionality to work with the database and on the profile when the user makes any changes and saving the changes and updating the database.
+3. ⁠Facing unexpected errors at the last minute.
+4. Had a long time troubleshooting the error to run the project.
+5. ⁠Managing and maintaining a growing codebase especially in layout of website.
+
 
 
 ### References
