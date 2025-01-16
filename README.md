@@ -98,13 +98,15 @@ A "Sign Up" link for users without an account. The design effectively combines v
 
 7. Cart Page
 ![photo_2025-01-16_01-15-44](https://github.com/user-attachments/assets/134d1866-f24e-4a2d-a998-210ff3690565)
+ <br/>Shows the items in the cart and the total to be paid during checkout
 
 8. Order Details Page
 ![photo_2025-01-16_01-15-51](https://github.com/user-attachments/assets/be4fb804-73c4-49dc-b502-61b2d6ad6f98)
+ <br/>Shows the details of the meals ordered and the pickup status
 
-9. Transaction Page
+10. Transaction Page
 
-10. User Profile Page<br />
+11. User Profile Page<br />
 Basic Details: Name, email, and user ID.
 Additional Fields: Phone number, address, and password input fields.
 An Edit button allows users to update their information. Navigation options for Menu, Cart, Order Updates, and Logout are present in the header, emphasizing user accessibility.
