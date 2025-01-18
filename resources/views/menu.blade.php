@@ -94,37 +94,37 @@
         <div class="mahallah-grid">
             <!-- Mahallah Aminah -->
             <a href="{{ route('mahallah.menu', 'aminah') }}" class="mahallah-card">
-                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Aminah" class="mahallah-logo">
+                <img src="{{ asset('assets/img/AminahLogo.png') }}" alt="Mahallah Aminah" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Aminah</h3>
             </a>
 
             <!-- Mahallah Hafsa -->
             <a href="{{ route('mahallah.menu', 'hafsa') }}" class="mahallah-card">
-                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Hafsa" class="mahallah-logo">
+                <img src="{{ asset('assets/img/HafsaLogo.png') }}" alt="Mahallah Hafsa" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Hafsa</h3>
             </a>
 
             <!-- Mahallah Nusaibah -->
             <a href="{{ route('mahallah.menu', 'nusaibah') }}" class="mahallah-card">
-                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Nusaibah" class="mahallah-logo">
+                <img src="{{ asset('assets/img/NusaibahLogo.png') }}" alt="Mahallah Nusaibah" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Nusaibah</h3>
             </a>
 
             <!-- Mahallah Salahuddin -->
             <a href="{{ route('mahallah.menu', 'salahuddin') }}" class="mahallah-card">
-                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Salahuddin" class="mahallah-logo">
+                <img src="{{ asset('assets/img/SalahuddinLogo.png') }}" alt="Mahallah Salahuddin" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Salahuddin</h3>
             </a>
 
             <!-- Mahallah Zubair -->
             <a href="{{ route('mahallah.menu', 'zubair') }}" class="mahallah-card">
-                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Zubair" class="mahallah-logo">
+                <img src="{{ asset('assets/img/ZubairLogo.png') }}" alt="Mahallah Zubair" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Zubair</h3>
             </a>
 
             <!-- Mahallah Ali -->
             <a href="{{ route('mahallah.menu', 'ali') }}" class="mahallah-card">
-                <img src="{{ asset('assets/img/mahallah-placeholder.jpg') }}" alt="Mahallah Ali" class="mahallah-logo">
+                <img src="{{ asset('assets/img/AliLogo.png') }}" alt="Mahallah Ali" class="mahallah-logo">
                 <h3 class="mahallah-name">Mahallah Ali</h3>
             </a>
       </div>
