@@ -87,39 +87,35 @@ Traditional login with email and password fields.
 A "Sign Up" link for users without an account. The design effectively combines visual appeal with functionality.
 ![photo_2025-01-16_01-15-39](https://github.com/user-attachments/assets/87a630e3-02b0-44b4-805c-2799681f3d37)
 
-4. Homepage
+4. Homepage<br/>
+Uers can explore the menu, learn about the restaurant, and easily navigate to other sections like Contact, Login, or Register. They can add items to their cart, view their order summary, and proceed to place an order seamlessly.
 ![photo_2025-01-16_01-15-42](https://github.com/user-attachments/assets/905ce3c6-2583-4dd4-9582-0e1682fc18d7)
 
-5. Mahallah Page
+5. Mahallah Page<br/>
+Users may choose from which mahallah cafe they want to order food. They can just simply tap the logo and it will directly bring them to the menu page according to the mahallah that they have chosen.
 ![photo_2025-01-16_01-16-46](https://github.com/user-attachments/assets/146a5fd1-b932-4e45-92b1-efac64aaf590)
 
-6. Menu Page
+6. Menu Page<br/>
 ![photo_2025-01-16_01-15-40](https://github.com/user-attachments/assets/87f2787b-7f5a-4744-9d68-46d4374760a3)
 
 7. Cart Page
+<br/>Shows the items in the cart and the total to be paid during checkout
 ![photo_2025-01-16_01-15-44](https://github.com/user-attachments/assets/134d1866-f24e-4a2d-a998-210ff3690565)
- <br/>Shows the items in the cart and the total to be paid during checkout
 
-8. Order Details Page
-![photo_2025-01-16_01-15-51](https://github.com/user-attachments/assets/be4fb804-73c4-49dc-b502-61b2d6ad6f98)
+
+8. Order Details & Transaction Page 
  <br/>Shows the details of the meals ordered and the pickup status
+![photo_2025-01-16_01-15-51](https://github.com/user-attachments/assets/be4fb804-73c4-49dc-b502-61b2d6ad6f98)
 
-10. Transaction Page
-
-11. User Profile Page<br />
+10. User Profile Page<br />
 Basic Details: Name, email, and user ID.
 Additional Fields: Phone number, address, and password input fields.
 An Edit button allows users to update their information. Navigation options for Menu, Cart, Order Updates, and Logout are present in the header, emphasizing user accessibility.
 ![photo_2025-01-16_01-15-53](https://github.com/user-attachments/assets/044cfa5f-dfdb-4362-8c53-f652b7d74cfa)
 
-12. Contact Page
+11. Contact Page
 ![photo_2025-01-16_01-15-32](https://github.com/user-attachments/assets/de2e44d0-01c7-4289-a4e2-031b8a74b1ba)
 ![photo_2025-01-16_01-15-34](https://github.com/user-attachments/assets/c41f55a8-7160-4daf-8186-8531c4924dae)
-
-
-
-
-
 
 
 ### Challenges faced while developing the web application
@@ -134,3 +130,4 @@ An Edit button allows users to update their information. Navigation options for 
 
 ### References
 1. IIUM Mahallah. (2022, September 17). IIUM mahallah. IIUM Mahallah |. https://mahallah.iium.edu.my/
+2. “Index - Yummy Bootstrap Template.” Bootstrapmade.com, 2025, bootstrapmade.com/content/demo/Yummy/. Accessed 18 Jan. 2025.
